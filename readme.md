@@ -1,5 +1,5 @@
 # Listener
-一个chrome插件, 用于监听网络流, 并生成相应的JavaScript,request代码.
+一个chrome插件, 用于监听网络流, 并生成相应HTTP请求的JavaScript,request代码.
 
 ## 安装
 打开chrome扩展程序页面, 选中开发者选项, 加载已解压的扩展程序. 在浏览文件夹中选中Listener文件夹, 点击确定.
