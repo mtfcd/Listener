@@ -8,7 +8,7 @@ fix leading '.' in cookie domain
 增加生成jar格式cookie
 
 ### 2017.8.16
-增加生成acc代码，和har原文
+增加输出har原文
 
 ### 2017.3.6
 增加filt选项，将js, css, 图片过滤掉
