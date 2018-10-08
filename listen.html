@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Listener</title>
+
+
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/jquery.highlight-5.js"></script>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/jquery.json.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.numberedtextarea.js"></script>
+
+    <script src="js/Sortable.js"></script>
+    <script src="listen.js"></script>
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-6">
+
+            <div class="row">
+
+            </div>
+            <div class="panel panel-default" style="margin-bottom: 5px">
+                <div role="tab" class="panel-heading">
+
+                    <button id="start-btn" class="btn-xs btn-success" type="button">Start</button>
+                    <button id="stop-btn" class="btn-xs btn-danger"  type="button">Stop</button>
+                    <button id="clean-btn" class="btn-xs btn-info"  type="button">Clean</button>
+                    <button class="collapsed btn-xs btn-default" role="button" data-toggle="collapse" href="#collapseForm" aria-expanded="false">Search</button>
+                </div>
+                <form id="collapseForm" class="form-group-sm form-horizontal panel-collapse collapse">
+                    <div class="form-group">
+                        <div class="col-xs-offset-1 col-sm-10">
+                            <div class="checkbox">
+                                <label>
+                                    <input id="set-cookie" type="checkbox">set cookie
+                                </label>
+                                <label>
+                                    <input id="cookie-chain" type="checkbox">cookie-chain
+                                </label>
+                                <label>
+                                    <input id="referer-chain" type="checkbox">referer-chain
+                                </label>
+                                <label>
+                                    <input id="redirect-chain" type="checkbox">redirect-chain
+                                </label>
+                                <label>
+                                    <input id="filt_jcp" type="checkbox">filt
+                                </label>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="search-url" class="col-sm-2 control-label">URL</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="input-sm form-control" id="search-url" placeholder="Search for url..">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="search-response" class="col-sm-2 control-label">Response</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="input-sm form-control" id="search-response" placeholder="Search for response..">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="search-request" class="col-sm-2 control-label">Request</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="input-sm form-control" id="search-request" placeholder="Search for request..">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="search-header" class="col-sm-2 control-label">Header</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="input-sm form-control" id="search-header" placeholder="Search for header..">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="search-cookie" class="col-sm-2 control-label">Cookie</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="input-sm form-control" id="search-cookie" placeholder="Search for cookie..">
+                        </div>
+                    </div>
+
+                </form>
+
+
+            </div>
+            <br><br>
+            <div id="logger">
+
+            </div>
+
+        </div>
+        <div class="col-xs-6" style="padding:0;">
+            <div>
+                <button id="generate" class="btn-xs"  type="button">generate code</button>
+                <button id="generateJson" class="btn-xs"  type="button" >generate json</button>
+                <button id="generateAcc" class="btn-xs"  type="button" >generate ACC</button>
+                <button id="generateCookies" class="btn-xs"  type="button" >generate Cookies</button>
+            </div>
+            <div id="listWithHandle" class="list-group">
+
+
+            </div>
+            <script src="js/sortableListWithHandle.js"></script>
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

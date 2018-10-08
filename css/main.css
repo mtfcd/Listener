@@ -1,0 +1,54 @@
+.label-danger {
+    background-color: #d9534f;
+}
+
+.label-success {
+    background-color: #5cb85c;
+}
+
+.label-primary {
+    background-color: #5cb85c;
+}
+
+.label-default {
+    background-color: #5cb85c;
+}
+
+.label-warning {
+    background-color: #f0ad4e;
+}
+
+body {
+    font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+    font-size: 125%;
+}
+
+#status {
+    /* avoid an excessively wide status text */
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 400px;
+}
+
+.left {
+    width: 60%
+}
+
+.right {
+    width: 40%
+}
+
+.highlight { background-color: red }
+
+.glyphicon-move {
+    cursor: move;
+    cursor: -webkit-grabbing;
+}
+.cancel-padding{
+    padding: 0 0 0 0;
+}
+span{
+    margin-left: 3px;
+    margin-right: 3px;
+}
