@@ -437,7 +437,6 @@ function filtJcp() {
 }
 
 function generateOneReq(pre, i) {
-
     const reqJson = pre;
     let options = {};
     let har = reqJson.request;
@@ -483,7 +482,6 @@ function generateOneReq(pre, i) {
     let funcClose = "}\n";
     let promiseDef =    "return new Promise(function(resolve, reject) {                         \n"+
                         "options" + i + ".jar = jar;                                            \n"+
-                        "options" + i + ".proxy = proxy;                                        \n"+
                         "    request(options" + i + ", function (error, response, body) {       \n"+
                         "        if (error) {                                                   \n"+
                         "            reject(error);                                             \n"+
@@ -496,6 +494,7 @@ function generateOneReq(pre, i) {
 
     return funcDef + "\n" + optionStr + "\n" + promiseDef + "\n" + funcClose;
 }
+
 function generateOneAccReq(req,i) {
 
     const reqJson = req;
@@ -573,10 +572,6 @@ function generateCode() {
     }
 
     let defStr = "let request = require('request');     \n"+
-                 "let iconv = require('iconv-lite');    \n"+
-                 "let cheerio = require('cheerio');    \n"+
-                 "let co = require('co');               \n"+
-                 "let proxy = 'http://127.0.0.1:1080';  \n"+
                  "let jar = request.jar();  \n";
 
     let coDefStr =   "co(function *(){      \n";
@@ -586,6 +581,33 @@ function generateCode() {
     for (let pre of hars){
         defStr += generateOneReq(pre, i) + '\n';
         coDefStr += "let result" + i + " = yield doRequest" + i + "(); \n";
+        i++;
+    }
+
+    copyToClipboard(defStr + coDefStr + coCloseStr);
+}
+
+function generateES6Code() {
+    console.log('generate es6');
+    let listToBeGeneratedDiv = document.getElementById('listWithHandle');
+
+    let pres = listToBeGeneratedDiv.children;
+    let hars = [];
+    for (let ele of pres){
+        let divId = ele.getAttribute('id');
+        hars.push(reqCache[divId.replace('d','')]);
+    }
+
+    let defStr = "const request = require('request');     \n"+
+                 "const jar = request.jar();  \n";
+
+    let coDefStr =   "async function run(){      \n";
+    let coCloseStr = "};                   \n";
+
+    let i = 0;
+    for (let pre of hars){
+        defStr += generateOneReq(pre, i) + '\n';
+        coDefStr += "let result" + i + " = await doRequest" + i + "(); \n";
         i++;
     }
 
@@ -650,4 +672,5 @@ window.onload = async function () {
     document.getElementById("generateCookies").addEventListener("click", generateCookies);
     document.getElementById("generateJson").addEventListener("click", generateJson);
     document.getElementById("generate").addEventListener("click", generateCode);
+    document.getElementById("generateES6").addEventListener("click", generateES6Code);
 };
