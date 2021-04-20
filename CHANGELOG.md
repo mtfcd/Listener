@@ -1,3 +1,6 @@
+### 2021.4.20
+add generating es6 code.
+
 ### 2017.8.24
 fix leading '.' exp in cookie domain
 

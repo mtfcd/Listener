@@ -41,9 +41,13 @@ cookie-chain, 当选中请求A的时候将返回中set了A中的cookie的请求�
 
 单击generate会生成js的request代码, 并按拍好的顺序放入co中.
 
+- 生成es6代码
+  
+单击generate es6 code 生成 async/await 风格的代码.
+
 - 复制har原文本
 
-单击generate会生成js的request代码, 并按拍好的顺序放入co中.
+复制chrome浏览器生成的har格式json.
 
 - 获取request jar格式的cookie
 
