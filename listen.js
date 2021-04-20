@@ -1,8 +1,3 @@
-/**
- * Created by caicong on 2016/9/10.
- */
-
-
 
 function addClassForRequest(methods) {
     let color = '';
@@ -597,27 +592,6 @@ function generateCode() {
     copyToClipboard(defStr + coDefStr + coCloseStr);
 }
 
-function generateAcc() {
-    console.log('generate acc');
-    let listToBeGeneratedDiv = document.getElementById('listWithHandle');
-
-    let pres = listToBeGeneratedDiv.children;
-    let reqs = [];
-    let i = 0;
-    let accCode = 'let accReqs = {\n';
-    for (let ele of pres){
-        let divId = ele.getAttribute('id');
-        const req = reqCache[divId.replace('d','')];
-        reqs.push(generateOneAccReq(req,i));
-        i++;
-    }
-    accCode += reqs.join(',\n\n');
-    accCode += '\n}';
-
-    copyToClipboard(accCode);
-}
-
-
 function generateJson() {
     console.log('generate Json');
     let listToBeGeneratedDiv = document.getElementById('listWithHandle');
@@ -675,6 +649,5 @@ window.onload = async function () {
 
     document.getElementById("generateCookies").addEventListener("click", generateCookies);
     document.getElementById("generateJson").addEventListener("click", generateJson);
-    document.getElementById("generateAcc").addEventListener("click", generateAcc);
     document.getElementById("generate").addEventListener("click", generateCode);
 };
